@@ -3,39 +3,25 @@
 Code used for manuscript methods
 
 ## Software used:
-- [PrinSeq-lite](http://prinseq.sourceforge.net/manual.html#STANDALONE)
-- [Cutadapt](https://github.com/marcelm/cutadapt)
-- [Bowtie2](https://github.com/BenLangmead/bowtie2)
-- [SAMtools](https://github.com/samtools/samtools)
-- [BEDTools](https://github.com/arq5x/bedtools2)
-- [MetaPhlAn](https://github.com/biobakery/MetaPhlAn)
-- [Megahit](https://github.com/voutcn/megahit)
-- [ABRicate](https://github.com/tseemann/abricate)
-- [CoverM](https://github.com/wwood/CoverM)
-- [Burrow-Wheeler Aligner](https://github.com/lh3/bwa)
-- [Prokka](https://github.com/tseemann/prokka)
-- [Kraken2](https://github.com/DerrickWood/kraken2)
-- [BLAST command line](https://www.ncbi.nlm.nih.gov/books/NBK279690/)
-- [GNU Parallel](https://www.gnu.org/software/parallel/sphinx.html)
+- [PrinSeq-lite](http://prinseq.sourceforge.net/manual.html#STANDALONE) v0.20.4
+- [Cutadapt](https://github.com/marcelm/cutadapt) v2.5
+- [Bowtie2](https://github.com/BenLangmead/bowtie2) v2.3.4.1
+- [SAMtools](https://github.com/samtools/samtools) v0.1.19
+- [BEDTools](https://github.com/arq5x/bedtools2) v2.25.0
+- [MetaPhlAn](https://github.com/biobakery/MetaPhlAn) v3.0
+- [Megahit](https://github.com/voutcn/megahit) v1.1.3
+- [ABRicate](https://github.com/tseemann/abricate) v0.9.8
+- [CoverM](https://github.com/wwood/CoverM) v0.4.0
+- [Burrow-Wheeler Aligner](https://github.com/lh3/bwa) v0.7.12
+- [Prokka](https://github.com/tseemann/prokka) v1.14.6
+- [Kraken2](https://github.com/DerrickWood/kraken2) v2.0.8
+  - using [kraken2-microbial database](https://lomanlab.github.io/mockcommunity/mc_databases.html)
+- [BLAST command line](https://www.ncbi.nlm.nih.gov/books/NBK279690/) v2.2.31
+- [GNU Parallel](https://www.gnu.org/software/parallel/sphinx.html) v20190322
 
-Install through conda (some clash so create separate environments):
-```
-conda install -c bioconda prinseq
-conda install -c bioconda cutadapt
-conda install -c bioconda bowtie2
-conda install -c bioconda samtools
-conda install -c bioconda bedtools
-conda install -c bioconda megahit
-conda install -c bioconda abricate
-conda install -c bioconda coverm
-conda install -c bioconda bwa
-conda install -c bioconda prokka
-conda install -c bioconda kraken2
-conda install -c bioconda blast
-conda install -c conda-forge parallel
 ```
 For making heatmaps:
-- [R](https://www.r-project.org/) - with packages:
+- [R](https://www.r-project.org/) v4.0.0 - with packages:
   - [pheatmap](https://github.com/raivokolde/pheatmap)
   - [RColorBrewer](https://cran.r-project.org/web/packages/RColorBrewer/index.html)
 
