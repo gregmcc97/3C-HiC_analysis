@@ -440,3 +440,5 @@ pheatmap(
 )
 ```
 
+# Updated workflow
+The workflow presented here was used in the meta3C/Hi-C manuscript. An updated workflow called [H-LARGe (Host-Linkage to antimicrobial resistance genes)](https://github.com/gregmcc97/H-LARGe) involving binning of the contigs for better host classification can be found [here](https://github.com/gregmcc97/H-LARGe).
