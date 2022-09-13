@@ -19,7 +19,6 @@ Code used for manuscript methods
 - [BLAST command line](https://www.ncbi.nlm.nih.gov/books/NBK279690/) v2.2.31
 - [GNU Parallel](https://www.gnu.org/software/parallel/sphinx.html) v20190322
 
-```
 For making heatmaps:
 - [R](https://www.r-project.org/) v4.0.0 - with packages:
   - [pheatmap](https://github.com/raivokolde/pheatmap)
@@ -354,7 +353,7 @@ The heatmap file was then edited to remove rows where no ARG had more than 2% of
 ```
 for file in [SAMPLE]_heatmap_table_genus_no_plasmid.csv ; do remove2=$(tail -n +2 $file | while read line ; do all_less=1 && for n in $(echo "$line" | cut -d"," -f2- | sed 's/,/ /g') ; do if (( $n >= 0.02 )) ; then all_less=0 ; fi ; done && if (( all_less )) ; then echo -e all_less'\t'$(echo "$line" | cut -d"," -f2- | sed 's/,/\\t/g') ; else echo $line ; fi ; done | grep "all_less" | cut -f2- | awk '{for (i=1;i<=NF;i++) sum[i]+=$i;}; END{for (i in sum) print sum[i];}' | paste -sd, ) && head -1 $file > ${file/.csv/_removed2.csv} && new=$(tail -n +2 $file | while read line ; do all_less=1 && for n in $(echo "$line" | cut -d"," -f2- | sed 's/,/ /g') ; do if (( $n >= 0.02 )) ; then all_less=0 ; fi ; done && if (( all_less )) ; then echo -e all_less'\t'$(echo "$line" | cut -d"," -f2- | sed 's/,/\\t/g') ; else echo $line ; fi ; done) && echo "${new}" | grep -v "all_less" >> ${file/.csv/_removed2.csv} && echo "Other",$remove2 >> ${file/.csv/_removed2.csv} ; done
 ```
-## Making the heatmap
+## Making the heatmaps
 A heatmap of the ARG-host links for each sample was made using the [pheatmap](https://github.com/raivokolde/pheatmap) package in [R](https://www.r-project.org/).
 
 Make the heatmap in R:
