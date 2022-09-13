@@ -1,1 +1,1 @@
-# 3C-HiC_analysis
+# 3C-HiC_analysis manuscript
