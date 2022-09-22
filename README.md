@@ -337,7 +337,7 @@ for i in k141_* ; do cat classification_list | while read name ; do cat $i | whi
 cd columns 
 
 #add ARG names to top of list (the arg_rem part is so the filename contains the ARG without any special characters)
-for i in columns_k141_* ; do grep "\<${${i/columns_/}/_$READ_SUFFIX/}\>" $ARG_CONTIGS | while read contig arg ; do arg_rem=$(echo ${arg//[\(\)]/} | sed s/"'"/""/g | sed s/"-"/""/g | sed s/"\."/""/g) && (echo ${arg} && cut -f2 $i) > ${i/columns_/}_${arg_rem} ; done ; done
+for i in columns_k141_* ; do b=${i/columns_/} && c=${b/_${READ_SUFFIX}/} && grep "\<${c}\>" $ARG_CONTIGS | while read contig arg ; do arg_rem=$(echo ${arg//[\(\)]/} | sed s/"'"/""/g | sed s/"-"/""/g | sed s/"\."/""/g) && (echo ${arg} && cut -f2 $i) > ${i/columns_/}_${arg_rem} ; done ; done
 
 #get list of classifications linked to ARGs with blank first line (for column 1 of heatmap)
 (echo -en '\n' && cat ../classification_list) > heatmap_list 
