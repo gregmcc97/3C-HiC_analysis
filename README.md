@@ -305,7 +305,7 @@ cd pasted
 
 #start making heatmap file 
 #get list of linked contig classifications and counts. At this point, contigs that BLAST identified as plasmid DNA are labelled as "Plasmid DNA", and the rest are labelled with their Kraken2 classification (down to genus level)
-#also this is written for zsh - if using BASH, change ":u" to ",," e.g. [[ "${classification,,}" == *"PLASMID"* ]]
+#also this is written for zsh - if using BASH, change ":u" to "^^" e.g. [[ "${classification^^}" == *"PLASMID"* ]]
 mkdir names
 for i in k141* ; 
 do cat $i | while IFS=$'\t' read count contig blast kraken ; 
