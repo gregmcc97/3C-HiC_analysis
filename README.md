@@ -139,7 +139,7 @@ for i in *.bam ; do samtools flagstat -@16 $i > ${i/.bam/_flagstat.txt} ; done
 ```
 Using the filtered alignment, intercontig reads (3C/Hi-C reads where each read of the pair maps to a different contig) were isolated:
 ```
-for i in *_aligned_filtered.bam ; do samtools view -F 14 $i | grep -v "=" > ${i/_aligned_filtered.bam/_intercontig.sam} ; done
+for i in *_aligned_filtered.bam ; do samtools view -F 14 $i | awk '$7!="=" {print $0}' > ${i/_aligned_filtered.bam/_intercontig.sam} ; done
 
 #samtools view -F 14 filters out reads that are unmapped, have an unmapped mate, or are mapped in a proper pair
 # grep -v "=" removes remaining aligned reads that align to the same contig as their mate ('=' in RNEXT column of sam file (column 7))
