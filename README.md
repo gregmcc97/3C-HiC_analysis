@@ -142,7 +142,7 @@ Using the filtered alignment, intercontig reads (3C/Hi-C reads where each read o
 for i in *_aligned_filtered.bam ; do samtools view -F 14 $i | awk '$7!="=" {print $0}' > ${i/_aligned_filtered.bam/_intercontig.sam} ; done
 
 #samtools view -F 14 filters out reads that are unmapped, have an unmapped mate, or are mapped in a proper pair
-# grep -v "=" removes remaining aligned reads that align to the same contig as their mate ('=' in RNEXT column of sam file (column 7))
+# awk '$7!="=" {print $0}' removes remaining aligned reads that align to the same contig as their mate ('=' in RNEXT column of sam file (column 7))
 ```
 The same mapping process was carried out using the shotgun metagenomic reads (if the sample had accompanying shotgun reads) to find spurious intercontig reads in the shotgun datasets.
 
